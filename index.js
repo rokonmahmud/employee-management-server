@@ -33,7 +33,7 @@ async function run() {
 
 
 
-    // const bistroDbCollection = client.db('BistroDb').collection('menus');
+    const bistroDbCollection = client.db('BistroDb').collection('menus');
     const BistroReview = client.db('BistroDb').collection('BistroReview');
     const cartCollection = client.db('BistroDb').collection('cartCollection');
     const userCollection = client.db('BistroDb').collection('users');
@@ -112,10 +112,10 @@ async function run() {
     })
 
     //get user data
-    app.get('/users',   verifyToken, verifyAdmin, async (req, res) => {
-      const result = await userCollection.find().toArray();
-      res.send(result);
-    })
+    // app.get('/users',   verifyToken, verifyAdmin, async (req, res) => {
+    //   const result = await userCollection.find().toArray();
+    //   res.send(result);
+    // })
     //Delete user Data
     app.delete('/user/:id', verifyToken, async (req, res)=>{
       const id = req.params.id;
