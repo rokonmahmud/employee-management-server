@@ -112,10 +112,10 @@ async function run() {
     })
 
     //get user data
-    // app.get('/users',   verifyToken, verifyAdmin, async (req, res) => {
-    //   const result = await userCollection.find().toArray();
-    //   res.send(result);
-    // })
+    app.get('/users',   verifyToken, verifyAdmin, async (req, res) => {
+      const result = await userCollection.find().toArray();
+      res.send(result);
+    })
     //Delete user Data
     app.delete('/user/:id', verifyToken, async (req, res)=>{
       const id = req.params.id;
